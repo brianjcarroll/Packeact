@@ -11,7 +11,7 @@ import App from 'containers/App';
 // TODO: figure out a good way to manage this shit.
 // require('../css/main.less');
 
-const Guitaramigo = {
+const NewReactApp = {
   init() {
     ReactDOM.render(<App />, document.getElementById('app'));
   },
@@ -24,5 +24,5 @@ if (
 ) {
   // App.init();
 } else {
-  document.addEventListener('DOMContentLoaded', Guitaramigo.init);
+  document.addEventListener('DOMContentLoaded', NewReactApp.init);
 }
