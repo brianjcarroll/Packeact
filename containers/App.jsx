@@ -1,9 +1,4 @@
-import Album from 'components/Album';
-import Dictionary from 'dictionaries/Main';
-import Header from 'containers/Header';
-import React, { Component } from 'react';
-import Rule from 'components/Rule';
-import Shows from 'components/Shows';
+import React, { Component, PropTypes } from 'react';
 
 class App extends Component {
   constructor(props) {
@@ -12,18 +7,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="u-container">
-        <Header {...Dictionary.website} />
-        <Rule title="listen" />
-        <main className="u-main">
-          {Dictionary.albums.map((album) => <Album {...album} />)}
-        </main>
-        <Rule title="witness" />
-        <Shows />
-        <Rule title="contact" />
-      </div>
+      <h1>{this.props.message}</h1>
     );
   }
 }
+
+App.propTypes = {
+  message: PropTypes.string,
+};
+
+App.defaultProps = {
+  message: 'New React App',
+};
 
 export default App;
